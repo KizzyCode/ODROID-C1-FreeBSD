@@ -23,7 +23,6 @@ dd if="$BL1" of="$1" bs=512
 dd if="$UBOOT" of="$1" bs=512 seek=64 conv=sync
 dd if=/dev/zero of="$1" bs=512 seek=1024 count=64
 
-gpart destroy -F "$1"
 gpart create -s mbr "$1"
 
 gpart add -t fat16 -b 1134 -s 64M "$1"
