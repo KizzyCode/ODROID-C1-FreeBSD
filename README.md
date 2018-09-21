@@ -76,6 +76,9 @@ dd if=root.img of=/dev/md0s2 bs=4096k
 # Adjust the partition size
 # ! Make sure that `/dev/md0` is your image !
 growfs /dev/md0s2
+
+# Detach SD-card image
+mdconfig -d -u0
 ```
 
 ## See also
