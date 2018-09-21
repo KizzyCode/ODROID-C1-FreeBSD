@@ -1,6 +1,3 @@
-#
-# (C) Copyright 2014 Hardkernel Co,.Ltd
-#
 #!/bin/bash
 set -e
 
