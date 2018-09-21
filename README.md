@@ -81,5 +81,7 @@ growfs /dev/md0s2
 mdconfig -d -u0
 ```
 
+Now your SD-card image should be ready 🎉
+
 ## See also
 [The FreeBSD wiki page](https://wiki.freebsd.org/FreeBSD/arm/Odroid-C1) which was the source for this project.
