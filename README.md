@@ -60,7 +60,7 @@ bash ./sd_fusing.sh /dev/md0
 cd ~/odroidc1/build
 
 # ! Make sure that `/dev/md0` is your image !
-mount -t msdosfs /dev/md0 /mnt
+mount -t msdosfs /dev/md0s1 /mnt
 
 # Copy the boot files
 cp /usr/obj/arm.armv6/usr/src/sys/ODROIDC1/kernel.bin /mnt/
