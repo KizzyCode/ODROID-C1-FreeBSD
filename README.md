@@ -26,7 +26,7 @@ make clean
 make -j8 TARGET_ARCH=armv6 kernel-toolchain
 make -j8 TARGET_ARCH=armv6 KERNCONF=ODROIDC1 buildkernel
 make -j8 TARGET_ARCH=armv6 buildworld
-make TARGET_ARCH=armv6 DESTDIR=/mnt installworld distribution
+make -j8 TARGET_ARCH=armv6 DESTDIR=/mnt installworld distribution
 
 # Copy the `fstab` to the root image
 cp fstab /mnt/etc/
