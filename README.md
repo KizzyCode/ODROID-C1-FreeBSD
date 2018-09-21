@@ -29,7 +29,7 @@ make -j8 TARGET_ARCH=armv6 buildworld
 make TARGET_ARCH=armv6 DESTDIR=/mnt installworld distribution
 
 # Copy the `fstab` to the root image
-cp fstab /mnt/
+cp fstab /mnt/etc/
 
 # Unmount and detach the root image
 umount /mnt
