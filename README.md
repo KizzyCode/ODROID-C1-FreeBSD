@@ -29,6 +29,7 @@ make -j8 TARGET_ARCH=armv6 buildworld
 make -j8 TARGET_ARCH=armv6 DESTDIR=/mnt installworld distribution
 
 # Copy the `fstab` to the root image
+cd ~/odroidc1/build
 cp fstab /mnt/etc/
 
 # Unmount and detach the root image
@@ -38,8 +39,6 @@ mdconfig -d -u0
 
 ## Create and attach our SD-card image
 ```sh
-cd ~/odroidc1/build
-
 # Create the SD-card image and attach it to `/dev/md0`
 truncate -s 2048M sd.img
 mdconfig -f sd.img -u0
