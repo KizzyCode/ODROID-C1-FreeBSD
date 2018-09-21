@@ -49,7 +49,7 @@ You need to either download my precompiled bootloader or [compile it yourself](h
 
 For now I assume that you use the precompiled version:
 ```sh
-cd ~/odroidc1/build/sd_fuse
+cd ./sd_fuse
 
 # ! Make sure that `/dev/md0` is your image !
 bash ./sd_fusing.sh /dev/md0
