@@ -45,7 +45,7 @@ mdconfig -f sd.img -u0
 ```
 
 ## Install our bootloader and prepare the SD card
-You need to either download my precompiled bootloader or [compile it yourself](https://github.com/KizzyCode/ODROID-C1-FreeBSD/blob/master/sd_fuse/build_under_fedora.md).
+You need to either download my precompiled bootloader or [compile it yourself](https://github.com/KizzyCode/ODROID-C1-FreeBSD/blob/master/build/sd_fuse/build_under_fedora.md).
 
 For now I assume that you use the precompiled version:
 ```sh
