@@ -84,15 +84,33 @@ mdconfig -d -u0
 Now your SD-card image should be ready 🎉
 
 
-## Post-install steps ()
- - Set a root password (currently an empty password is set)
- - Configure network (e.g. add these lines in `/etc/rc.conf`):
-   ```sh
-   # Network
-   rtsold_enable="YES"
-   ifconfig_dwc0="DHCP"
-   ifconfig_dwc0_ipv6="inet6 accept_rtadv"
-   ```
+## Post-install steps (can be performed on the ODROID itself)
+Set a root password (currently an empty password is set) and configure `/etc/rc.conf`:
+```sh
+# General
+clear_tmp_enable="YES"
+dumpdev="NO"
+syslogd_flags="-ss"
+hostname="Kizzys-ODROID"
+keymap="de.acc"
+
+# Services
+sshd_enable="YES"
+sendmail_enable="NONE"
+ntpd_enable="YES"
+ntpdate_enable="YES"
+geom_eli_load="YES"
+jail_enable="YES"
+
+# Time and date
+ntpd_enable="YES"
+ntpdate_enable="YES"
+
+# Network
+rtsold_enable="YES"
+ifconfig_dwc0="DHCP"
+ifconfig_dwc0_ipv6="inet6 accept_rtadv"
+```
 
 
 ## See also
