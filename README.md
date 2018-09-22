@@ -83,5 +83,17 @@ mdconfig -d -u0
 
 Now your SD-card image should be ready 🎉
 
+
+## Post-install steps ()
+ - Set a root password (currently an empty password is set)
+ - Configure network (e.g. add these lines in `/etc/rc.conf`):
+   ```sh
+   # Network
+   rtsold_enable="YES"
+   ifconfig_dwc0="DHCP"
+   ifconfig_dwc0_ipv6="inet6 accept_rtadv"
+   ```
+
+
 ## See also
 [The FreeBSD wiki page](https://wiki.freebsd.org/FreeBSD/arm/Odroid-C1) which was the source for this project.
