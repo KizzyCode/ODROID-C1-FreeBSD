@@ -23,10 +23,10 @@ mount /dev/md0 /mnt
 # Build FreeBSD for ARMv6 and install it into the root image
 cd /usr/src
 make clean
-make -j8 TARGET_ARCH=armv6 kernel-toolchain
-make -j8 TARGET_ARCH=armv6 KERNCONF=ODROIDC1 buildkernel
-make -j8 TARGET_ARCH=armv6 buildworld
-make -j8 TARGET_ARCH=armv6 DESTDIR=/mnt installworld distribution
+make -j8 TARGET_ARCH=armv7 kernel-toolchain
+make -j8 TARGET_ARCH=armv7 KERNCONF=ODROIDC1 buildkernel
+make -j8 TARGET_ARCH=armv7 buildworld
+make -j8 TARGET_ARCH=armv7 DESTDIR=/mnt installworld distribution
 
 # Copy the `fstab` to the root image
 cd ~/odroidc1/build
