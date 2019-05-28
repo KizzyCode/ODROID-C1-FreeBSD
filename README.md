@@ -20,13 +20,16 @@ mdconfig -f root.img -u0
 newfs /dev/md0
 mount /dev/md0 /mnt
 
-# Build FreeBSD for ARMv6 and install it into the root image
+# Install older meson.dtsi-version (see http://freebsd.1045724.x6.nabble.com/odroidc1-build-kernel-fails-td6318210.html)
 cd /usr/src
+fetch -o sys/gnu/dts/arm/meson.dtsi "https://svnweb.freebsd.org/base/releng/11.1/sys/gnu/dts/arm/meson.dtsi?revision=320486&view=co&pathrev=324819"
+
+# Build FreeBSD for ARMv6 and install it into the root image
 make clean
-make -j8 TARGET_ARCH=armv7 kernel-toolchain
-make -j8 TARGET_ARCH=armv7 KERNCONF=ODROIDC1 buildkernel
-make -j8 TARGET_ARCH=armv7 buildworld
-make -j8 TARGET_ARCH=armv7 DESTDIR=/mnt installworld distribution
+make -j8 TARGET=arm TARGET_ARCH=armv7 kernel-toolchain
+make -j8 TARGET=arm TARGET_ARCH=armv7 KERNCONF=ODROIDC1 buildkernel
+make -j8 TARGET=arm TARGET_ARCH=armv7 buildworld
+make -j8 TARGET=arm TARGET_ARCH=armv7 DESTDIR=/mnt installworld distribution
 
 # Copy the `fstab` to the root image
 cd ~/odroidc1/build
